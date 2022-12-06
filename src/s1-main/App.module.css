@@ -1,0 +1,25 @@
+.App {
+}
+
+.hw {
+    display: grid;
+    grid-template-rows: 70px 70px 70px;
+    grid-template-areas: 'myMessage' 'friendMessage' 'sendMessage';
+}
+
+.hw div {
+}
+
+.hwTitle {
+    margin-top: 70px;
+    margin-left: 130px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+
+
+    color: #000000;
+}

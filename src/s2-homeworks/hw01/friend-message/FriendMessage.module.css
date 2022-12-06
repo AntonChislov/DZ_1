@@ -1,0 +1,69 @@
+.friendMessage {
+    grid-area: friendMessage;
+    justify-self: start;
+    margin-left: 100px;
+}
+
+.friendImageAndText {
+    display: grid;
+    grid-template-areas:
+            'avaF nameF'
+            'avaF textF';
+}
+
+.friendImageAndText img {
+    width: 48px;
+    grid-area: avaF;
+    text-align: right;
+}
+
+.friendText {
+    margin-left: 5px;
+    padding: 6px;
+    background: #F5F7FB;
+    border-radius: 10px;
+}
+
+.friendText:after {
+}
+
+.friendName {
+    grid-area: nameF;
+    text-align: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #000000;
+    padding-left: 10px;
+}
+
+.friendMessageText {
+    grid-area: textF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+
+    text-align: right;
+    padding-left: 10px;
+}
+
+.friendTime {
+    grid-area: timeF;
+    text-align: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: #000000;
+    padding-left: 11px;
+}
