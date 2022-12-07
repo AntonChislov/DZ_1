@@ -2,10 +2,22 @@
 }
 
 .hw {
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
 }
 
 .hw div {
 }
 
 .hwTitle {
+    margin: 107px 0 0 70px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+
+
+    color: #000000;
 }
