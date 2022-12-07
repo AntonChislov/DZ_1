@@ -1,26 +1,10 @@
 .sendForm {
-    grid-area: sendMessage;
-    display: grid;
-    grid-template-rows: 40px;
 }
 
 .textarea {
-    background: #F5F7FB;
-    border-radius: 20px;
-    width: 1100px;
-    grid-row: 1;
-    margin-left: 100px;
-    resize: inherit;
 }
 
 .button {
-    background: #0066CC;
-    border-radius: 20px;
-    height: 40px;
-    width: 120px;
-    color: #FFFFFF;
-    border: none;
-    grid-row: 1;
 }
 
 .button:hover {
