@@ -21,6 +21,7 @@ const MessageSender = (props: any) => {
     }, [text])
 
     const addMessage = () => {
+        debugger
         setMessages([
             ...messages,
             {
