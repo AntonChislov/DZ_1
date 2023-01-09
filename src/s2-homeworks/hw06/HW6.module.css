@@ -1,5 +1,20 @@
+.hw {
+    display: flex;
+    margin: 32px 0 0 104px;
+}
+
 .buttonsContainer {
+    margin: 29px 0 285px 104px;
 }
 
 .editableSpanContainer {
+    margin: 32px 0 0 104px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #0080FF;
 }
