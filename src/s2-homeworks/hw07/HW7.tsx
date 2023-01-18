@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import SuperSelect from './common/c5-SuperSelect/SuperSelect'
 import SuperRadio from './common/c6-SuperRadio/SuperRadio'
 import s2 from '../../s1-main/App.module.css'
@@ -11,14 +11,19 @@ import s from './HW7.module.css'
 * 4 - сделать стили в соответствии с дизайном
 * */
 
-const arr = [
-    { id: 1, value: 'x' },
-    { id: 2, value: 'y' },
-    { id: 3, value: 'z' },
+export type OptionsType = {
+    id: number
+    value: string | number
+}
+
+const arr: Array<OptionsType> = [
+    { id: 1, value: 'code' },
+    { id: 2, value: 'game' },
+    { id: 3, value: 'sleep' },
 ] // value может быть изменено
 
 const HW7 = () => {
-    const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
+    const [value, onChangeOption] = useState(2) // селект и радио должны работать синхронно
 
     return (
         <div id={'hw7'}>
