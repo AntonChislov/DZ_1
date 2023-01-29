@@ -5,10 +5,6 @@ import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import User from './User'
 
-/*
-* 3 - сделать стили в соответствии с дизайном
-* */
-
 export type UserType = {
     _id: number
     name: string
