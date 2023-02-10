@@ -4,9 +4,7 @@
 .hw {
     border-top: 1px solid #D9D9D9;
     border-bottom: 1px solid #D9D9D9;
-}
-
-.hw div {
+    padding: 47px 0 100px 73px;
 }
 
 .hwTitle {
