@@ -22,7 +22,6 @@ type TechType = {
 }
 
 const getTechs = (params: any) => {
-    console.log(params)
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
             'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test3',
@@ -46,10 +45,16 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-                setTechs(res.data.techs)
+                let sortTechs
+
+                if (sort === '') sortTechs = res.data.techs.sort((a, b) => b.id - a.id)
+                else if (sort === '1tech') sortTechs = res.data.techs.sort((a, b) => a.id - b.id)
+                else sortTechs = res.data.techs
+                setTechs(sortTechs)
                 console.log(res)
                 // сохранить пришедшие данные
                 setTotalCount(res.data.totalCount)
+                setLoading(false)
                 //
             })
             .catch((e) => {
@@ -75,6 +80,7 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
         sendQuery({page: 1, count})
+        // setTechs(techs.sort((a, b) => b.id - a.id))
         // setSearchParams(
 
         //
