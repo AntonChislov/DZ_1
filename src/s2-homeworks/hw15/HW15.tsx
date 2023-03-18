@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import {CircularProgress} from '@mui/material';
 
 /*
 * 1 - дописать SuperPagination
@@ -46,10 +47,25 @@ const HW15 = () => {
                 // делает студент
                 let sortTechs
 
-                if (sort === '') sortTechs = res.data.techs.sort()
-                else if (sort === '1tech') sortTechs = res.data.techs.sort().reverse()
+                if (sort === '') sortTechs = res.data.techs.sort((a, b) => {
+                    let nameA = a.tech.toLowerCase(), nameB = b.tech.toLowerCase()
+                    if (nameA > nameB) //сортируем строки по возрастанию
+                        return -1
+                    if (nameA > nameB)
+                        return 1
+                    return 0 // Никакой сортировки
+                })
+                else if (sort === '1tech') sortTechs = res.data.techs.sort((a, b) => {
+                    let nameA = a.tech.toLowerCase(), nameB = b.tech.toLowerCase()
+                    if (nameA < nameB) //сортируем строки по возрастанию
+                        return -1
+                    if (nameA > nameB)
+                        return 1
+                    return 0 // Никакой сортировки
+                })
                 else sortTechs = res.data.techs
                 setTechs(sortTechs)
+                console.log(sortTechs)
                 // сохранить пришедшие данные
                 setTotalCount(res.data.totalCount)
                 setLoading(false)
@@ -107,7 +123,7 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading && <div id={'hw15-loading'} className={s.loading}><CircularProgress /></div>}
 
                 <SuperPagination
                     page={page}
