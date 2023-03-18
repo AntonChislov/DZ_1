@@ -38,7 +38,6 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    console.log(searchParams)
 
     const sendQuery = (params: any) => {
         setLoading(true)
@@ -47,11 +46,10 @@ const HW15 = () => {
                 // делает студент
                 let sortTechs
 
-                if (sort === '') sortTechs = res.data.techs.sort((a, b) => b.id - a.id)
-                else if (sort === '1tech') sortTechs = res.data.techs.sort((a, b) => a.id - b.id)
+                if (sort === '') sortTechs = res.data.techs.sort()
+                else if (sort === '1tech') sortTechs = res.data.techs.sort().reverse()
                 else sortTechs = res.data.techs
                 setTechs(sortTechs)
-                console.log(res)
                 // сохранить пришедшие данные
                 setTotalCount(res.data.totalCount)
                 setLoading(false)
@@ -80,7 +78,6 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
         sendQuery({page: 1, count})
-        // setTechs(techs.sort((a, b) => b.id - a.id))
         // setSearchParams(
 
         //
