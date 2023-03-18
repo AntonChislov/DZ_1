@@ -45,27 +45,8 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-                let sortTechs
-
-                if (sort === '') sortTechs = res.data.techs.sort((a, b) => {
-                    let nameA = a.tech.toLowerCase(), nameB = b.tech.toLowerCase()
-                    if (nameA > nameB) //сортируем строки по возрастанию
-                        return -1
-                    if (nameA > nameB)
-                        return 1
-                    return 0 // Никакой сортировки
-                })
-                else if (sort === '1tech') sortTechs = res.data.techs.sort((a, b) => {
-                    let nameA = a.tech.toLowerCase(), nameB = b.tech.toLowerCase()
-                    if (nameA < nameB) //сортируем строки по возрастанию
-                        return -1
-                    if (nameA > nameB)
-                        return 1
-                    return 0 // Никакой сортировки
-                })
-                else sortTechs = res.data.techs
-                setTechs(sortTechs)
-                console.log(sortTechs)
+                setTechs(res.data.techs)
+                console.log(res)
                 // сохранить пришедшие данные
                 setTotalCount(res.data.totalCount)
                 setLoading(false)
@@ -93,7 +74,7 @@ const HW15 = () => {
         console.log(newSort)
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
-        sendQuery({page: 1, count})
+        sendQuery({sort: newSort, page: 1, count})
         // setSearchParams(
 
         //
